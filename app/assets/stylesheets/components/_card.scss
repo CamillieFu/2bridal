@@ -1,0 +1,93 @@
+.dress-card {
+  width: 300px;
+  margin-left: 24px;
+  font-size: 1rem;
+
+  img {
+    width: 300px;
+    height: 400px;
+    object-fit: cover;
+    margin: 8px 0px 16px 0px;
+    // top margin is 8px, right margin is 0px, bottom is 16px, left is 0px
+    border-radius: 8px;
+  }
+
+  p {
+    text-align: left;
+    margin-left: 4px;
+    line-height: 1.1rem;
+  }
+
+  a {
+    text-decoration: none;
+    color: rgb(176, 176, 176);
+    float: right;
+    position: relative;
+    font-size: 24px;
+    margin-left: 8px;
+  }
+
+  .pink {
+    color: pink
+  }
+}
+
+.booking-card {
+  margin: 24px;
+  width: 200px;
+  font-size: 1rem;
+
+  img {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    margin: 8px 0px 16px 0px;
+    // top margin is 8px, right margin is 0px, bottom is 16px, left is 0px
+    border-radius: 8px;
+  }
+
+  p {
+    text-align: left;
+    margin: 0px 0px 4px 4px;
+    line-height: 1rem;
+  }
+}
+
+.listings {
+    a {
+    text-decoration: none;
+    color: #6C757D;
+    font-size: 16px;
+    margin-left: 8px;
+  }
+}
+
+.home-card {
+  min-height: 624px;
+  margin-bottom: 24px;
+}
+
+.carousel-dress-card {
+  width: 300px;
+  margin-left: 24px;
+  font-size: 1rem;
+
+  img {
+    width: 400px;
+    height: 600px;
+    object-fit: cover;
+    margin: 8px 0px 16px 0px;
+    // top margin is 8px, right margin is 0px, bottom is 16px, left is 0px
+    border-radius: 8px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .dress-card {
+    margin-left: 0;
+  }
+
+  .carousel-dress-card {
+    margin-left: 0;
+  }
+}

@@ -1,0 +1,53 @@
+<div class="container">
+  <%= render 'shared/carousel' %>
+  <div class="m-3">
+    <h3><%= @dress.style %> style dress designed by <%= @dress.brand %></h3>
+    <p><%= @dress.description %></p>
+    <p>Size: <%= @dress.size %></p>
+    <button type="button" class="btn btn-dark float-right" data-toggle="modal" data-target="#bookingModal">
+      Book Dress
+    </button>
+    <p>Color: <%= @dress.color %></p>
+    <p>Price Per Day: <%= number_to_currency(@dress.price_per_day, {unit: '¥', precision: 0}) %></p>
+  </div>
+  <h3 class="m-3 my-5">This Dress's Reviews</h3>
+
+  <div data-controller="insert-in-list" class="reviews mx-auto">
+    <div id="reviews" data-insert-in-list-target="items">
+      <% if @dress.reviews.blank? %>
+        <p class="m-3" id=" first-review" data-insert-in-list-target="header">Be the first to leave a review for this dress!</p>
+      <% else %>
+        <% @dress.reviews.each do |review| %>
+          <%= render review %>
+        <% end %>
+      <% end %>
+    </div>
+
+    <div class="m-3 my-5">
+      <h3>Leave a Review</h3>
+      <%= render 'reviews/form', dress: @dress, review: @review %>
+    </div>
+  </div>
+
+  <%= link_to 'Back', :back, class: "btn btn-outline-secondary mb-5 m-3" %>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="bookingModal" tabindex="-1" role="dialog" aria-labelledby="bookingModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="bookingModalLabel">Book This Dress</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <%= render 'bookings/form', dress: @dress, booking: @booking %>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>

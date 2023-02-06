@@ -1,0 +1,16 @@
+<div class="container">
+  <h3 class="my-3">
+    <% if @query == nil %>
+    All Our Dresses
+    <% elsif @dresses.count > 1 %>
+      <%= @dresses.count %> dresses found for you
+    <% elsif @dresses.count == 1 %>
+      <%= @dresses.count %> dress found for you
+    <% else %>
+      Sorry, no results were found for "<%= @query %>."
+    <% end %>
+  </h3>
+
+  <%= render 'list', dresses: @dresses %>
+
+</div>

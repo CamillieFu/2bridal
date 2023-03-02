@@ -21,7 +21,9 @@ Dress.create(
   style: 'Mermaid',
   description: 'Magestic and feminine.',
   price_per_day: 50_000,
-  user_id: User.first.id
+  user_id: User.first.id,
+  dress_url: 'https://images.unsplash.com/photo-1595868321403-bac51fbdeb97?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80'
+
 )
 Dress.create(
   brand: 'Gucci',
